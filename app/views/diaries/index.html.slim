@@ -1,0 +1,15 @@
+h2 日記一覧
+
+= link_to '追加', new_diary_path, class: 'btn btn-primary'
+
+.mb-4
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Diary.human_attribute_name(:title)
+      th= Diary.human_attribute_name(:created_at)
+  tbody
+    - @diaries.each do |diary|
+      tr
+        td= diary.title
+        td= diary.created_at
